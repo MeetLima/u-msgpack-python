@@ -372,7 +372,7 @@ def _pack2(obj, fp):
         _pack_oldspec_raw(obj, fp)
     elif isinstance(obj, unicode):
         _pack_string(obj, fp)
-    elif isinstance(obj, str):
+    elif isinstance(obj, str) or isinstance(obj, bytearray):
         _pack_binary(obj, fp)
     elif isinstance(obj, list) or isinstance(obj, tuple):
         _pack_array(obj, fp)
